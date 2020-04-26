@@ -4,10 +4,12 @@
   "description": "Be deliberate about where you spend your time on the internet. Set goals for number of articles to read on your favorite blogs.",
   "manifest_version": 2,
   "permissions": ["declarativeContent", "storage"],
-  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "options.html"},
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://*", "https://*"],
       "js": ["content.js"]
     }
   ],
