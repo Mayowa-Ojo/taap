@@ -1,17 +1,12 @@
 {
-  "name": "Hippocampus",
-  "version": "0.0.4",
-  "description": "Be deliberate about where you spend your time on the internet. Set goals for number of articles to read on your favorite blogs.",
+  "name": "Taap",
+  "version": "1.0.0",
+  "description": "",
   "manifest_version": 2,
   "permissions": ["declarativeContent", "storage"],
   "browser_action": {
     "default_icon": "icon16.png",
-    "default_popup": "options.html"},
-  "content_scripts": [
-    {
-      "matches": ["http://*", "https://*"],
-      "js": ["content.js"]
-    }
-  ],
+    "default_popup": "popup.html"
+  },
   "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
 }
