@@ -7,8 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "parcel src/content.tsx src/options.html",
-    "build-prod": "parcel build src/content.tsx src/options.html"
+    "dev": "parcel src/popup.html",
+    "build-prod": "parcel build src/popup.html"
   },
   "dependencies": {
     "@material-ui/core": "^4.0.0",
