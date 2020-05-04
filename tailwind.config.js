@@ -11,6 +11,9 @@ module.exports = {
       'sans': ['Helvetica', 'Arial', 'sans-serif']
     },
     extend: {
+      spacing: {
+        '72': '18rem'
+      },
       colors: {
         'cpurple': {
           '100': '#7066E3',
