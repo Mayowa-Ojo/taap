@@ -4,18 +4,25 @@
 
 #### The all-in-one utility toolbox. Call it a jack of all trade, master of...whatever you need? Taap aims to provide some of the tools you typically reach out to in your daily dealings bundled in one app.
 
-### Features
+### Features :clipboard:
 Taap features a growing list of awesome tools we think you might need.
 
 * Task Manager
 * Password Keeper
 * Dictionary
-* Wishlist 
+* Wishlist
 
-### Usage
+### Tools :hammer:
+* React
+* Typescript
+* Tailwind CSS
+* PostCSS
+* Parcel
+
+### Usage :construction:
 
 Taap is still in active development.
 
-### Contribution
+### Contribution :rocket:
 
 Ideas on new widgets to include are highly welcome. Open an issue.
