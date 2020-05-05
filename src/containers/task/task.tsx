@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import Card from "./components/card";
+import Card from "./components/card/card";
 import "./task.css";
 
-export default function task() {
+export default function Task() {
    const [counter, setCounter] = React.useState(0)
 
    const handleClick = () => {
