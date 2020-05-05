@@ -1,0 +1,9 @@
+.toast {
+   ul {
+      height: calc(100% - 1rem);
+
+      li {
+         height: calc((100% - 1rem) / 5.5);
+      }
+   }
+}
