@@ -10,11 +10,6 @@ module.exports = {
     fontFamily: {
       'sans': ['Helvetica', 'Arial', 'sans-serif']
     },
-    colors: {
-      custom: {
-        body: "#7066E3",
-      }
-    },
     extend: {
       spacing: {
         '72': '18rem'
