@@ -3,8 +3,8 @@ import * as React from 'react'
 import Toast from "../toast/toast";
 import "./card.scss";
 
-export default function Card() {
-   const [isOpen, setIsOpen] = React.useState(false)
+const Card: React.FC = () => {
+   const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
    const handleMenuOpen = () => {
       setIsOpen(!isOpen)
@@ -43,3 +43,5 @@ export default function Card() {
       </div>
    )
 }
+
+export default Card;
