@@ -4,18 +4,18 @@ import Card from "./components/card/card";
 import { insertMany } from "../../database/taskdb";
 import "./task.css";
 
-export default function Task() {
-   const [counter, setCounter] = React.useState(0)
+const Task: React.FC = () => {
+   const [counter, setCounter] = React.useState(0);
 
    const handleClick = () => {
       setCounter(counter + 1)
    }
 
-   //React.useEffect(() => {
+   // React.useEffect(() => {
    //   (async () => {
    //      await insertMany()
    //   })()
-   //}, [])
+   // }, [])
    
    return (
       <div className="wrapper overflow-y-scroll h-full flex flex-row pt-8">
@@ -60,3 +60,5 @@ export default function Task() {
       </div>
    )
 }
+
+export default Task;
