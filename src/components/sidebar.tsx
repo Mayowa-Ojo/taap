@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default function Sidebar() {
+const Sidebar: React.FC = () => {
    return (
       <div className="flex flex-col items-center w-16 bg-white pt-4">
          <img className="w-8 mb-16" src="icon48.png" alt="brand-logo"/>
@@ -22,3 +22,5 @@ export default function Sidebar() {
       </div>
    )
 }
+
+export default Sidebar;

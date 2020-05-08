@@ -3,7 +3,7 @@ import * as React from "react";
 import "./navbar.scss";
 
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
    return (
       <nav className="navbar pr-4 flex w-full items-center h-10 border-b border-solid border-gray-300 justify-between">
          <div></div>
@@ -33,3 +33,5 @@ export default function Navbar() {
       </nav>
    )
 }
+
+export default Navbar;

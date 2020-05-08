@@ -2,7 +2,7 @@ import * as React from 'react'
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 
-export default function Wrapper(props) {
+const Wrapper: React.FC = (props) => {
    return (
       <div className="flex flex-row w-full h-full" >
          <Sidebar />
@@ -10,3 +10,5 @@ export default function Wrapper(props) {
       </div>
    )
 }
+
+export default Wrapper;
