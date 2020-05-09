@@ -1,21 +1,32 @@
 import * as React from 'react'
 
 import Card from "./components/card/card";
-import { insertMany } from "../../database/taskdb";
+// import { insertMany } from "../../database/taskdb";
+// import { tasks_seed } from "../../database/seed";
+import utils from "../../utils/utils";
 import "./task.css";
 
 const Task: React.FC = () => {
-   const [counter, setCounter] = React.useState(0);
+   const [cards, setCards] = React.useState<Object>({})
+   
+   const renderCards = async () => {
+      const cards = {}
+      const inProgress = await utils.filterByStatus("in-progress" as Status)
+      const completed = await utils.filterByStatus("completed" as Status)
+      const unfulfilled = await utils.filterByStatus("unfulfilled" as Status)
+      
+      cards["in-progress"] = inProgress.map((obj, i) => <Card key={i} task={obj}/>)
+      cards["completed"] = completed.map((obj, i) => <Card key={i} task={obj}/>)
+      cards["unfulfilled"] = unfulfilled.map((obj, i) => <Card key={i} task={obj}/>)
 
-   const handleClick = () => {
-      setCounter(counter + 1)
+      setCards(cards)
    }
 
-   // React.useEffect(() => {
-   //   (async () => {
-   //      await insertMany()
-   //   })()
-   // }, [])
+   React.useEffect(() => {
+      (async () => {
+         await renderCards()
+      })()
+    }, [])
    
    return (
       <div className="wrapper overflow-y-scroll h-full flex flex-row pt-8">
@@ -26,9 +37,7 @@ const Task: React.FC = () => {
                </svg>
                In-progress
             </h4>
-            <Card />
-            <Card />
-            <Card />
+            {  cards["in-progress"] }
          </div>
          <div className="flex flex-col items-center py-4 w-1/3 border-r border-l border-solid border-gray-300 h-full">
             <h4 className="flex items-center text-gray-700">
@@ -37,9 +46,7 @@ const Task: React.FC = () => {
                </svg>
                Completed
             </h4>
-            <Card />
-            <Card />
-            <Card />
+            {  cards["completed"] }
          </div>
          <div className="flex flex-col items-center py-4 w-1/3 h-full">
             <h4 className="flex items-center text-gray-700">
@@ -48,14 +55,7 @@ const Task: React.FC = () => {
                </svg>
                Unfulfilled
             </h4>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {  cards["unfulfilled"] }
          </div>
       </div>
    )
