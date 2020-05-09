@@ -1,7 +1,7 @@
 {
   "name": "Taap",
   "version": "1.0.0",
-  "description": "",
+  "description": "Taap is a utility-driven chrome extension. Think of it as a swiss army knife of handy widgets.",
   "manifest_version": 2,
   "permissions": ["declarativeContent", "storage"],
   "browser_action": {
