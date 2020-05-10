@@ -1,4 +1,7 @@
 .card {
+   &:hover {
+      outline: 1px solid #A3BFFA;
+   }
    div:nth-child(2) {
       div.layer {
          height: 50%;

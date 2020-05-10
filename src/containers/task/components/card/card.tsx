@@ -11,7 +11,7 @@ const Card: React.FC<CardProp> = ({ task }) => {
    }
 
    return (
-      <div className="card h-12 w-48 flex bg-white flex-row my-4 shadow">
+      <div className="card h-12 w-48 flex bg-white flex-row my-4 shadow cursor-pointer">
          <div className="flex flex-col items-center justify-center w-1/12">
             <svg className="" width="2" height="25" viewBox="0 0 2 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                <rect opacity="0.5" width="2" height="25" rx="1" fill="#FFC13D"/>
@@ -20,8 +20,8 @@ const Card: React.FC<CardProp> = ({ task }) => {
          <div className="w-11/12 flex flex-col">
             <div className="layer flex justify-between pt-3 px-1">
             <p className="truncate text-gray-800">{ task.deet }</p>
-               <svg onClick={handleMenuOpen} className="transform -translate-x-1 -translate-y-1 cursor-pointer" width="13" height="3" viewBox="0 0 13 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.5 3C1.89782 3 2.27936 2.84196 2.56066 2.56066C2.84196 2.27936 3 1.89782 3 1.5C3 1.10218 2.84196 0.720644 2.56066 0.43934C2.27936 0.158035 1.89782 0 1.5 0C1.10218 0 0.720644 0.158035 0.43934 0.43934C0.158035 0.720644 0 1.10218 0 1.5C0 1.89782 0.158035 2.27936 0.43934 2.56066C0.720644 2.84196 1.10218 3 1.5 3ZM6.5 3C6.89782 3 7.27936 2.84196 7.56066 2.56066C7.84196 2.27936 8 1.89782 8 1.5C8 1.10218 7.84196 0.720644 7.56066 0.43934C7.27936 0.158035 6.89782 0 6.5 0C6.10218 0 5.72064 0.158035 5.43934 0.43934C5.15804 0.720644 5 1.10218 5 1.5C5 1.89782 5.15804 2.27936 5.43934 2.56066C5.72064 2.84196 6.10218 3 6.5 3ZM13 1.5C13 1.89782 12.842 2.27936 12.5607 2.56066C12.2794 2.84196 11.8978 3 11.5 3C11.1022 3 10.7206 2.84196 10.4393 2.56066C10.158 2.27936 10 1.89782 10 1.5C10 1.10218 10.158 0.720644 10.4393 0.43934C10.7206 0.158035 11.1022 0 11.5 0C11.8978 0 12.2794 0.158035 12.5607 0.43934C12.842 0.720644 13 1.10218 13 1.5Z" fill="#5C737F"/>
+               <svg onClick={handleMenuOpen} className="transform -translate-x-1 -translate-y-1 cursor-pointer" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.14286 0L4 2.85714L6.85714 0L8 0.571429L4 4.57143L0 0.571429L1.14286 0Z" fill="#6682E3"/>
                </svg>
                <Toast isOpen={isOpen} handleMenuOpen={handleMenuOpen} />
             </div>
