@@ -4,7 +4,7 @@ import Card from "./components/card/card";
 // import { insertMany } from "../../database/taskdb";
 // import { tasks_seed } from "../../database/seed";
 import utils from "../../utils/utils";
-import "./task.css";
+import "./task.scss";
 
 const Task: React.FC = () => {
    const [cards, setCards] = React.useState<Object>({})
