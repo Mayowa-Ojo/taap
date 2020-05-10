@@ -1,4 +1,4 @@
 node_modules
 dist
 .*
-!/.gitignore
+_notes.md
