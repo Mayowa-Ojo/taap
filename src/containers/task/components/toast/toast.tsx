@@ -1,7 +1,7 @@
 import * as React from 'react'
 import useClickAway from "../../../../hooks/useClickAway";
 
-import "./toast.css";
+import "./toast.scss";
 
 const Toast: React.FC<ToastProp> = (props) => {
 
