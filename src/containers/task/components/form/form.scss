@@ -35,6 +35,23 @@
       }
    }
 
+   input[type="date"] {
+      width: 5.5rem;
+      &::-webkit-inner-spin-button {
+         display: none;
+      }
+      &::-webkit-clear-button {
+         display: none;  
+      }
+   }
+
+   input[type="time"] {
+      width: 3.5rem;
+      &::-webkit-clear-button {
+         display: none;
+      }
+   }
+
    .due {
       input {
          font-size: 0.6rem;
@@ -44,5 +61,13 @@
    button {
       height: 1.8rem;
       font-size: 0.8rem;
+   }
+}
+
+.close-btn {
+   &:hover {
+      svg path {
+         stroke: white;
+      }
    }
 }
