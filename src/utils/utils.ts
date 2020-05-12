@@ -1,12 +1,12 @@
 // utility functions
 
-import { v1 as uuidv1 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 import { findAll } from "../database/taskdb";
 
 const injectID = <T>(data: T[]): T[] => {
    return data.map<T>(obj => {
-      const newObj = {...obj, id: uuidv1()}
+      const newObj = {...obj, id: uuidv4()}
       return newObj
    })
 }
