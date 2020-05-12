@@ -9,7 +9,6 @@ const injectID = <T>(data: T[]): T[] => {
       const newObj = {...obj, id: uuidv1()}
       return newObj
    })
-
 }
 
 const filterByStatus = async (status: Status): Promise<Task[]> => {
@@ -20,9 +19,18 @@ const filterByStatus = async (status: Status): Promise<Task[]> => {
    return result;
 }
 
+const formatAsDate = (date: string, time: string): Date => {
+   const formatString = `${date}, ${time}`;
+
+   const formatDate = new Date(formatString)
+
+   return formatDate
+}
+
 const utils = {
    injectID,
-   filterByStatus
+   filterByStatus,
+   formatAsDate
 }
 
 export default utils;
