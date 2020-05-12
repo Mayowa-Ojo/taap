@@ -19,13 +19,13 @@ const Card: React.FC<CardProp> = ({ task }) => {
          </div>
          <div className="w-11/12 flex flex-col">
             <div className="layer flex justify-between pt-3 px-1">
-            <p className="truncate text-gray-800">{ task.deet }</p>
+               <p className="truncate text-gray-800">{ task.deet }</p>
                <svg onClick={handleMenuOpen} className="transform -translate-x-1 -translate-y-1 cursor-pointer" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.14286 0L4 2.85714L6.85714 0L8 0.571429L4 4.57143L0 0.571429L1.14286 0Z" fill="#6682E3"/>
                </svg>
                <Toast isOpen={isOpen} handleMenuOpen={handleMenuOpen} />
             </div>
-            <div className="flex justify-between layer pt-2 pl-1 pr-2">
+            <div className="flex justify-between layer pt-1 pl-1 pr-2">
                <li>
                   <svg className="transform translate-y-1" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M2.8 8C2.69391 8 2.59217 7.95786 2.51716 7.88284C2.44214 7.80783 2.4 7.70609 2.4 7.6V6.4H0.8C0.587827 6.4 0.384344 6.31571 0.234315 6.16569C0.0842854 6.01566 0 5.81217 0 5.6V0.8C0 0.587827 0.0842854 0.384344 0.234315 0.234315C0.384344 0.0842854 0.587827 0 0.8 0H7.2C7.41217 0 7.61566 0.0842854 7.76569 0.234315C7.91571 0.384344 8 0.587827 8 0.8V5.6C8 5.81217 7.91571 6.01566 7.76569 6.16569C7.61566 6.31571 7.41217 6.4 7.2 6.4H4.76L3.28 7.884C3.2 7.96 3.1 8 3 8H2.8ZM3.2 5.6V6.832L4.432 5.6H7.2V0.8H0.8V5.6H3.2ZM6 3.6H5.2V2.8H6V3.6ZM4.4 3.6H3.6V2.8H4.4V3.6ZM2.8 3.6H2V2.8H2.8V3.6Z" fill="#6682E3"/>

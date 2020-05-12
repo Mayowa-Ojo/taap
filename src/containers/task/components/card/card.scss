@@ -4,7 +4,12 @@
    }
    div:nth-child(2) {
       div.layer {
-         height: 50%;
+         &:first-child {
+            height: 60%;
+         }
+         &:nth-child(2) {
+            height: 40%;
+         }
 
          p {
             font-size: 0.7rem;
