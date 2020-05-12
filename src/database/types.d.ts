@@ -14,8 +14,9 @@ declare enum Priority {
 type uuid = string
 
 declare interface Task {
-   id: uuid
-   deet: string
+   id?: uuid
+   deet: string,
+   comment?: string
    status: Status
    createdAt: Date
    priority: Priority
