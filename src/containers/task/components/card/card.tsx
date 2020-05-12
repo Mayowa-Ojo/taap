@@ -11,7 +11,7 @@ const Card: React.FC<CardProp> = ({ task }) => {
    }
 
    return (
-      <div className="card h-12 w-48 flex bg-white flex-row my-4 shadow cursor-pointer">
+      <div className="card h-12 w-48 flex bg-white flex-row my-4 pb-1 shadow cursor-pointer">
          <div className="flex flex-col items-center justify-center w-1/12">
             <svg className="" width="2" height="25" viewBox="0 0 2 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                <rect opacity="0.5" width="2" height="25" rx="1" fill="#FFC13D"/>
@@ -40,6 +40,7 @@ const Card: React.FC<CardProp> = ({ task }) => {
                </li>
             </div>
          </div>
+         <input className="hidden" type="hidden" name="_id" value={task.id} />
       </div>
    )
 }
