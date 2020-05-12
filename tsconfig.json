@@ -11,7 +11,13 @@
     "allowJs": true,
     "jsx": "react",
     "lib": ["ES2015", "DOM"],
-    "declaration": true
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "~hooks/*": ["src/hooks/*"],
+      "~utils/*": ["src/utils/*"],
+      "~database/*": ["src/database/*"]
+    }
   },
   "include": ["./src/**/*", "src/database/types.d.ts"]
 }
