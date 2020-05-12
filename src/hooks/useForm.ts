@@ -1,18 +1,5 @@
 import * as React from "react";
 
-type FormValues = {
-   task: string
-   comment: string
-   priority: string,
-   date: string,
-   time: string
-}
-type EventElement = HTMLInputElement | HTMLTextAreaElement
-type Params = {
-   initialValues: FormValues
-   persistFormData: (values) => void
-}
-
 const useForm = ({ initialValues, persistFormData }: Params) => {
    const [values, setValues] = React.useState<FormValues>(initialValues)
 
