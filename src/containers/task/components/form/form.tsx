@@ -1,6 +1,8 @@
 import * as React from 'react'
 
 import useForm from "../../../../hooks/useForm";
+import { insertOne } from "../../../../database/taskdb";
+import utils from "../../../../utils/utils";
 import "./form.scss";
 
 const Form: React.FC<FormProp> = ({ toggleModal }) => {
@@ -8,16 +10,30 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
    const initialValues = {
       task: "",
       comment: "",
-      priority: "",
+      priority: 0 as Priority,
       date: "",
       time: ""
    }
-   const persistFormData = (values) => {
+   const persistFormData = (values: FormValues) => {
       console.log(values)
+      const data = {
+         deet: values.task,
+         comment: values.comment,
+         status: "in-progress" as Status,
+         priority: values.priority,
+         createdAt: new Date(),
+         due: utils.formatAsDate(values.date, values.time)
+      }
+
+      const task: Task = utils.injectID([data])[0]
+
+      insertOne(task)
+         .catch(err => console.error(err))
    }
    const {values, handleChange, handleSubmit} = useForm({initialValues, persistFormData})
 
    React.useEffect(() => {
+      // handle keyboard event
       const handler = (e: KeyboardEvent): void => {
          if(e.which == 8) { // close on backspace key
             toggleModal()
