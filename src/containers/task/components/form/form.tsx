@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import useForm from "../../../../hooks/useForm";
-import { insertOne } from "../../../../database/taskdb";
-import utils from "../../../../utils/utils";
+import useForm from "~hooks/useForm";
+import { insertOne } from "~database/taskdb";
+import utils from "~utils/utils";
 import "./form.scss";
 
 const Form: React.FC<FormProp> = ({ toggleModal }) => {
@@ -15,7 +15,7 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
       time: ""
    }
    const persistFormData = (values: FormValues) => {
-      console.log(values)
+
       const data = {
          deet: values.task,
          comment: values.comment,
