@@ -8,6 +8,7 @@ import "./task.scss";
 
 const Task: React.FC = () => {
    const [cards, setCards] = React.useState<Object>({})
+   const [isReloading, setReloading] = React.useState<boolean>(false)
    
    const renderCards = async () => {
       const cards = {}
@@ -15,18 +16,24 @@ const Task: React.FC = () => {
       const completed = await utils.filterByStatus("completed" as Status)
       const unfulfilled = await utils.filterByStatus("unfulfilled" as Status)
       
-      cards["in-progress"] = inProgress.map((obj, i) => <Card key={i} task={obj}/>)
-      cards["completed"] = completed.map((obj, i) => <Card key={i} task={obj}/>)
-      cards["unfulfilled"] = unfulfilled.map((obj, i) => <Card key={i} task={obj}/>)
+      cards["in-progress"] = inProgress.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} />)
+      cards["completed"] = completed.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} />)
+      cards["unfulfilled"] = unfulfilled.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} />)
 
       setCards(cards)
    }
 
    React.useEffect(() => {
+
       (async () => {
-         await renderCards()
-      })()
-    }, [])
+         await renderCards();
+
+         setTimeout(() => {
+            setReloading(false)
+         }, 500);
+      })();
+   
+    }, [isReloading]);
    
    return (
       <div className="wrapper overflow-y-scroll h-full flex flex-row pt-8">
