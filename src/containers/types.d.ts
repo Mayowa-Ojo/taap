@@ -1,6 +1,7 @@
 declare type ToastProp = {
-   isOpen: boolean,
+   isOpen: boolean
    handleMenuOpen: () => void
+   dispatchToastAction: (action: string) => (id: string) => void
 }
 
 declare type WrapperProp = {
@@ -9,6 +10,7 @@ declare type WrapperProp = {
 
 declare type CardProp = {
    task: Task
+   setReloading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 declare type FormProp = {
