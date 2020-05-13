@@ -72,9 +72,10 @@ export async function updateAll(): Promise<void> {
    }
 }
 
-export async function deleteOne(): Promise<void> {
+export async function deleteOne(id: string): Promise<void> {
    try {
       //...
+      await db.table("tasks").delete(id)
    } catch (err) {
       console.error(err)
    }
