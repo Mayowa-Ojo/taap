@@ -1,15 +1,20 @@
 import * as React from 'react'
-import useClickAway from "../../../../hooks/useClickAway";
+import useClickAway from "~hooks/useClickAway";
 
 import "./toast.scss";
 
 const Toast: React.FC<ToastProp> = (props) => {
 
+   const ref = useClickAway({isOpen: props.isOpen, setOpen: props.handleMenuOpen})
+   
    const handleClick = () => {
       props.handleMenuOpen()
    }
 
-   const ref = useClickAway({isOpen: props.isOpen, setOpen: props.handleMenuOpen})
+   const handleToastAction = (e) => {
+      const action = props.dispatchToastAction(e.target.innerText)
+      action("95a70e78-c33a-4994-a548-06c690e6ca68")
+   } 
 
    return (
       <div ref={ref} className={`toast ${props.isOpen ? "visible" : "invisible"} w-24 h-32 bg-white z-10 fixed shadow-md border border-gray-300 border-solid`}>
@@ -19,12 +24,12 @@ const Toast: React.FC<ToastProp> = (props) => {
             </svg>
          </div>
          <ul>
-            <li className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">View Task</li>
-            <li className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Edit Task</li>
-            <li className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Mark as complete</li>
-            <li className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Mark as unfulfilled</li>
-            <li className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Pin Task</li>
-            <li className="text-gray-600 pl-2 hover:bg-gray-300 cursor-pointer">Delete Task</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">View Task</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Edit Task</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Mark as Complete</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Mark as Unfulfilled</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 border-b border-gray-200 border-solid hover:bg-gray-300 cursor-pointer">Pin Task</li>
+            <li onClick={handleToastAction} className="text-gray-600 pl-2 hover:bg-gray-300 cursor-pointer">Delete Task</li>
          </ul>
       </div>
    )
