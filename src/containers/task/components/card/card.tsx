@@ -1,13 +1,66 @@
 import * as React from 'react'
 
 import Toast from "../toast/toast";
+import { deleteOne } from "~database/taskdb";
 import "./card.scss";
 
-const Card: React.FC<CardProp> = ({ task }) => {
+const Card: React.FC<CardProp> = ({ task, setReloading }) => {
    const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
    const handleMenuOpen = () => {
       setIsOpen(!isOpen)
+   }
+
+   const handleEditTask = () => {
+      console.log("undefined handler...")
+   }
+
+   const handleViewTask = () => {
+      console.log("undefined handler...")
+   }
+
+   const handlePinTask = () => {
+      console.log("undefined handler...")
+   }
+
+   const handleTaskStatus = () => {
+      console.log("undefined handler...")
+   }
+
+   const handleDeleteTask = (id: string) => {
+      deleteOne(id)
+         .then(_ => {
+            console.log("task deleted")
+            handleMenuOpen()
+            setReloading(true)
+         })
+         .catch(err => console.error(err))
+   }
+
+   type DispatchToastAction = (action: string) => (id: string) => void
+   const dispatchToastAction: DispatchToastAction = (action) => {
+      switch (action) {
+         case "Edit Task":
+            console.log("opening editor")
+            return handleEditTask;
+         case "Pin Task":
+            console.log("opening editor")
+            return handlePinTask;
+         case "Mark as Complete":
+            console.log("opening editor")
+            return handleTaskStatus;
+         case "Mark as Unfulfilled":
+            console.log("opening editor")
+            return handleTaskStatus
+         case "View Task":
+            console.log("opening editor")
+            return handleViewTask;
+         case "Delete Task":
+            return handleDeleteTask
+         default:
+            console.error("invalid action")
+            break;
+      }
    }
 
    return (
@@ -23,7 +76,7 @@ const Card: React.FC<CardProp> = ({ task }) => {
                <svg onClick={handleMenuOpen} className="transform -translate-x-1 -translate-y-1 cursor-pointer" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.14286 0L4 2.85714L6.85714 0L8 0.571429L4 4.57143L0 0.571429L1.14286 0Z" fill="#6682E3"/>
                </svg>
-               <Toast isOpen={isOpen} handleMenuOpen={handleMenuOpen} />
+               <Toast dispatchToastAction={dispatchToastAction} isOpen={isOpen} handleMenuOpen={handleMenuOpen} />
             </div>
             <div className="flex justify-between layer pt-1 pl-1 pr-2">
                <li>
