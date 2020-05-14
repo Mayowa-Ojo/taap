@@ -66,13 +66,13 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
                <label className="block text-gray-700 text-sm mb-2" htmlFor="task">
                Task
                </label>
-               <input onChange={handleChange} value={values.task} className="shadow-sm appearance-none border rounded text-xs w-full py-2 px-3 text-gray-700 leading-tight" id="task" name="task" type="text" />
+               <input onChange={handleChange} value={values.task} className="shadow-sm appearance-none border rounded text-xs w-full py-2 px-3 text-gray-700 leading-tight" id="task" name="task" type="text" required />
             </div>
             <div className="mb-4">
                <label className="block text-gray-700 text-sm mb-2" htmlFor="comment">
                Comment
                </label>
-               <textarea onChange={handleChange} value={values.comment} id="comment" className="shadow-sm appearance-none border rounded w-full h-20 text-xs py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="comment"></textarea>
+               <textarea onChange={handleChange} value={values.comment} id="comment" className="shadow-sm appearance-none border rounded w-full h-20 text-xs py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="comment" required></textarea>
             </div>
             <div className="max-w-sm flex flex-wrap items-center">
                <label className="block text-gray-700 text-sm mb-2 mr-4" htmlFor="comment">
@@ -108,10 +108,10 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
                   Due
                </label>
                <div className="mb-2 mr-4">
-                  <input onChange={handleChange} className="shadow-sm appearance-none border rounded py-2 px-2 text-gray-700 leading-tight" id="date" name="date" type="date" />
+                  <input onChange={handleChange} className="shadow-sm appearance-none border rounded py-2 px-2 text-gray-700 leading-tight" id="date" name="date" type="date" required />
                </div>
                <div className="mb-2">
-                  <input onChange={handleChange} className="shadow-sm appearance-none border rounded py-2 px-1 text-gray-700 leading-tight" id="time" name="time" type="time" />
+                  <input onChange={handleChange} className="shadow-sm appearance-none border rounded py-2 px-1 text-gray-700 leading-tight" id="time" name="time" type="time" required />
                </div>
             </div>
 
