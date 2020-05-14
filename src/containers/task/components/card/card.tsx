@@ -71,12 +71,12 @@ const Card: React.FC<CardProp> = ({ task, setReloading }) => {
             </svg>
          </div>
          <div className="w-11/12 flex flex-col">
-            <div className="layer flex justify-between pt-3 px-1">
+            <div className="layer flex justify-between relative pt-3 px-1">
                <p className="truncate text-gray-800">{ task.deet }</p>
                <svg onClick={handleMenuOpen} className="transform -translate-x-1 -translate-y-1 cursor-pointer" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.14286 0L4 2.85714L6.85714 0L8 0.571429L4 4.57143L0 0.571429L1.14286 0Z" fill="#6682E3"/>
                </svg>
-               <Toast dispatchToastAction={dispatchToastAction} isOpen={isOpen} handleMenuOpen={handleMenuOpen} />
+               {isOpen ? <Toast dispatchToastAction={dispatchToastAction} isOpen={isOpen} handleMenuOpen={handleMenuOpen} /> : null}
             </div>
             <div className="flex justify-between layer pt-1 pl-1 pr-2">
                <li>
