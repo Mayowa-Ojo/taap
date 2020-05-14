@@ -6,14 +6,15 @@ import "./toast.scss";
 const Toast: React.FC<ToastProp> = (props) => {
 
    const ref = useClickAway({isOpen: props.isOpen, setOpen: props.handleMenuOpen})
-   
+
    const handleClick = () => {
       props.handleMenuOpen()
    }
 
    const handleToastAction = (e) => {
+      const id = e.target.closest(".card").querySelector("input[type='hidden']").value
       const action = props.dispatchToastAction(e.target.innerText)
-      action("4f04091d-9ca6-4d15-b45f-58913ef44cdd")
+      action(id)
    } 
 
    return (
