@@ -11,6 +11,7 @@ declare type WrapperProp = {
 declare type CardProp = {
    task: Task
    setReloading: React.Dispatch<React.SetStateAction<boolean>>
+   toggleModal: (string?) => void
 }
 
 declare type FormProp = {
@@ -23,5 +24,13 @@ declare type NavbarProp = {
 
 declare type ModalProp = {
    children: React.ReactNode
+   toggleModal: (string?) => void
+}
+
+declare type ViewProp = {
+   toggleModal: (string?) => void
+}
+
+declare type TaskProp = {
    toggleModal: (string?) => void
 }
