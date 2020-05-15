@@ -5,6 +5,7 @@ import Wrapper from "./components/wrapper";
 import Modal from "./components/modal";
 import Task from "./containers/task/task";
 import Form from "./containers/task/components/form/form";
+import View from "./containers/task/components/view/view";
 import Navbar from "./components/navbar";
 import "./popup.css";
 
@@ -27,7 +28,7 @@ function App() {
       case "form":
         return <Form toggleModal={toggleModal} />;
       case "view": 
-        return <Form toggleModal={toggleModal} />;
+        return <View toggleModal={toggleModal} />;
     }
   }
 
@@ -35,7 +36,7 @@ function App() {
     <Wrapper>
       <main className="flex flex-col w-full">
         <Navbar toggleModal={toggleModal} />
-        <Task />
+        <Task toggleModal={toggleModal} />
         { 
           isOpen ?
             <Modal toggleModal={toggleModal}>
