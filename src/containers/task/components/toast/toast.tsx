@@ -15,6 +15,7 @@ const Toast: React.FC<ToastProp> = (props) => {
       const id = e.target.closest(".card").querySelector("input[type='hidden']").value
       const action = props.dispatchToastAction(e.target.innerText)
       action(id)
+      props.handleMenuOpen()
    } 
 
    return (
