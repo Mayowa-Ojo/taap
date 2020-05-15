@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 
 const Wrapper: React.FC<WrapperProp> = (props) => {
