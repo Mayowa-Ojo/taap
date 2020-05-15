@@ -14,9 +14,14 @@ declare type CardProp = {
 }
 
 declare type FormProp = {
-   toggleModal: () => void
+   toggleModal: (string?) => void
 }
 
 declare type NavbarProp = {
-   toggleModal: () => void
+   toggleModal: (string?) => void
+}
+
+declare type ModalProp = {
+   children: React.ReactNode
+   toggleModal: (string?) => void
 }
