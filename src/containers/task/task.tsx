@@ -3,7 +3,7 @@ import * as React from 'react'
 import Card from "./components/card/card";
 // import { insertMany } from "../../database/taskdb";
 // import { tasks_seed } from "../../database/seed";
-import utils from "../../utils/utils";
+import utils from "~utils/utils";
 import "./task.scss";
 
 const Task: React.FC = () => {
@@ -33,7 +33,7 @@ const Task: React.FC = () => {
          }, 500);
       })();
    
-    }, [isReloading]);
+   }, [isReloading]);
    
    return (
       <div className="wrapper overflow-y-scroll h-full flex flex-row pt-8">
