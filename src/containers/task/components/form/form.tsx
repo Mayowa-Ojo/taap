@@ -33,7 +33,7 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
          .then(_ => console.log("[x] - task created"))
          .catch(err => console.error(err))
    }
-   const {values, handleChange, handleSubmit} = useForm({initialValues, persistFormData})
+   const {values, handleChange, handleSubmit} = useForm({initialValues, persistFormData, toggleModal})
 
    React.useEffect(() => {
       // handle keyboard event
