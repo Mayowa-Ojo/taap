@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const useForm = ({ initialValues, persistFormData }: Params) => {
+const useForm = ({ initialValues, persistFormData, toggleModal }: Params) => {
    const [values, setValues] = React.useState<FormValues>(initialValues)
 
    const handleChange = (e: React.ChangeEvent<EventElement>) => {
@@ -10,6 +10,7 @@ const useForm = ({ initialValues, persistFormData }: Params) => {
    const handleSubmit = (e) => {
       e.preventDefault()
       persistFormData(values)
+      toggleModal()
    }
 
    return {
