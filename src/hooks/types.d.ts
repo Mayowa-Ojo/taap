@@ -11,4 +11,5 @@ declare type EventElement = HTMLInputElement | HTMLTextAreaElement
 declare type Params = {
    initialValues: FormValues
    persistFormData: (values: FormValues) => void
+   toggleModal: () => void
 }
