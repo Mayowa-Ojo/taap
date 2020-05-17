@@ -4,7 +4,7 @@ import useClickAway from "~hooks/useClickAway";
 import "./toast.scss";
 
 const Toast: React.FC<ToastProp> = (props) => {
-   console.log(props.status)
+
    const ref = useClickAway({isOpen: props.isOpen, setOpen: props.handleMenuOpen})
 
    const handleClick = () => {
