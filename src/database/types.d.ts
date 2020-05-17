@@ -21,6 +21,7 @@ declare interface Task {
    createdAt: Date
    priority: Priority
    due: Date
+   pinned: boolean
 }
 
 declare interface Options {
