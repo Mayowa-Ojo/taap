@@ -4,7 +4,10 @@ import utils from "../utils/utils";
 export async function findOne(id: string): Promise<Task> {
    try {
       //...
-      const response = await db.table("tasks").where("id").equals(id)
+      let response: Task;
+      await db.table("tasks").where("id").equals(id).each(obj => {
+         response = obj
+      })
 
       return response as unknown as Task
    } catch (err) {
