@@ -1,12 +1,12 @@
 import db from "./indexdb";
 import utils from "../utils/utils";
 
-export async function findOne(id: number): Promise<any> {
+export async function findOne(id: string): Promise<Task> {
    try {
       //...
       const response = await db.table("tasks").where("id").equals(id)
 
-      return response
+      return response as unknown as Task
    } catch (err) {
       console.error(err)
    }
@@ -48,7 +48,7 @@ export async function insertMany(data: Task[]): Promise<void> {
    }
 }
 
-export async function updateOne(id: string, field: string, update: string): Promise<void> {
+export async function updateOne(id: string, field: string, update: string | boolean): Promise<void> {
    try {
       //...
       await db.table("tasks").update(id, { [field]: update })
