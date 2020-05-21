@@ -1,7 +1,10 @@
+declare type Action = (id: string, update?: string) => void
+declare type DispatchToastAction = (action: string) => Action | [Action, string]
+
 declare type ToastProp = {
    isOpen: boolean
    handleMenuOpen: () => void
-   dispatchToastAction: (action: string) => (id: string) => void
+   dispatchToastAction: DispatchToastAction
    status: string
 }
 
