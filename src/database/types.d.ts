@@ -6,9 +6,9 @@ declare enum Status {
 }
 
 declare enum Priority {
-   low,
-   medium,
-   high
+   low = "low",
+   medium = "medium",
+   high = "high"
 }
 
 type uuid = string
