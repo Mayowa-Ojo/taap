@@ -48,9 +48,11 @@ export async function insertMany(data: Task[]): Promise<void> {
    }
 }
 
-export async function updateOne(): Promise<void> {
+export async function updateOne(id: string, field: string, update: string): Promise<void> {
    try {
       //...
+      await db.table("tasks").update(id, { [field]: update })
+      console.log("[x] - field updated...")
    } catch (err) {
       console.error(err)
    }
