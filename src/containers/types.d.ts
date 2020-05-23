@@ -1,5 +1,6 @@
 declare type Action = (id: string, update?: string) => void
 declare type DispatchToastAction = (action: string) => Action | [Action, string]
+declare type ToggleModal = (string?, data?: Task) => void
 
 declare type ToastProp = {
    isOpen: boolean
@@ -15,27 +16,28 @@ declare type WrapperProp = {
 declare type CardProp = {
    task: Task
    setReloading: React.Dispatch<React.SetStateAction<boolean>>
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal
    status: string
 }
 
 declare type FormProp = {
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal,
+   data?: Task
 }
 
 declare type NavbarProp = {
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal
 }
 
 declare type ModalProp = {
    children: React.ReactNode
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal
 }
 
 declare type ViewProp = {
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal
 }
 
 declare type TaskProp = {
-   toggleModal: (string?) => void
+   toggleModal: ToggleModal
 }
