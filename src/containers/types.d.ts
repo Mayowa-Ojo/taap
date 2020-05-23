@@ -11,6 +11,8 @@ declare type ToastProp = {
 
 declare type WrapperProp = {
    children: React.ReactNode
+   currentApp: string
+   setCurrentApp: React.Dispatch<React.SetStateAction<string>>
 }
 
 declare type CardProp = {
@@ -26,7 +28,8 @@ declare type FormProp = {
 }
 
 declare type NavbarProp = {
-   toggleModal: ToggleModal
+   toggleModal: ToggleModal,
+   currentApp: string
 }
 
 declare type ModalProp = {
@@ -41,4 +44,9 @@ declare type ViewProp = {
 
 declare type TaskProp = {
    toggleModal: ToggleModal
+}
+
+declare type SidebarProp = {
+   currentApp: string
+   setCurrentApp: React.Dispatch<React.SetStateAction<string>>
 }
