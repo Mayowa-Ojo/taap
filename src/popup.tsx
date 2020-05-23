@@ -12,10 +12,12 @@ import "./popup.css";
 function App() {  
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
   const [modalContent, setModalContent] = React.useState<string>("")
+  const [modalData, setModalData] = React.useState<any>({})
 
-  const toggleModal = (content?: string) => {
+  const toggleModal: ToggleModal = (content, data) => {
     if(!isOpen) {
       setModalContent(content)
+      setModalData(data)
       setIsOpen(!isOpen)
       return
     }
@@ -23,10 +25,10 @@ function App() {
     setIsOpen(!isOpen)
   }
 
-  const renderModalContent = (modalContent: string) => {
+  const renderModalContent = (modalContent: string, data?: Task) => {
     switch (modalContent) {
       case "form":
-        return <Form toggleModal={toggleModal} />;
+        return <Form toggleModal={toggleModal} data={modalData}/>;
       case "view": 
         return <View toggleModal={toggleModal} />;
     }
