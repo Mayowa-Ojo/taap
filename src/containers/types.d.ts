@@ -36,6 +36,7 @@ declare type ModalProp = {
 
 declare type ViewProp = {
    toggleModal: ToggleModal
+   data: Task
 }
 
 declare type TaskProp = {
