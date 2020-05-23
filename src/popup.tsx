@@ -4,12 +4,14 @@ import * as ReactDOM from "react-dom";
 import Wrapper from "./components/wrapper";
 import Modal from "./components/modal";
 import Task from "./containers/task/task";
+import Password from "./containers/password_keeper/password";
 import Form from "./containers/task/components/form/form";
 import View from "./containers/task/components/view/view";
 import Navbar from "./components/navbar";
 import "./popup.css";
 
-function App() {  
+function App() {
+  const [currentApp, setCurrentApp] = React.useState<string>("Task Manager")
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
   const [modalContent, setModalContent] = React.useState<string>("")
   const [modalData, setModalData] = React.useState<any>({})
@@ -28,21 +30,32 @@ function App() {
   const renderModalContent = (modalContent: string, data?: Task) => {
     switch (modalContent) {
       case "form":
-        return <Form toggleModal={toggleModal} data={modalData}/>;
+        return <Form toggleModal={toggleModal} data={data}/>;
       case "view": 
-        return <View toggleModal={toggleModal} data={modalData}/>;
+        return <View toggleModal={toggleModal} data={data}/>;
+    }
+  }
+
+  const renderCurrentApp = (current: string) => {
+    switch(current) {
+      case "Task Manager":
+        return <Task toggleModal={toggleModal} />
+      case "Password Keeper":
+        return <Password />
+      default:
+        return <Task toggleModal={toggleModal} />
     }
   }
 
   return (
-    <Wrapper>
+    <Wrapper currentApp={currentApp} setCurrentApp={setCurrentApp}>
       <main className="flex flex-col w-full">
-        <Navbar toggleModal={toggleModal} />
-        <Task toggleModal={toggleModal} />
+        <Navbar toggleModal={toggleModal} currentApp={currentApp} />
+        { renderCurrentApp(currentApp) }
         { 
           isOpen ?
             <Modal toggleModal={toggleModal}>
-              {renderModalContent(modalContent)}
+              {renderModalContent(modalContent, modalData)}
             </Modal>
           : 
             ""
