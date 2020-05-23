@@ -3,14 +3,14 @@ import * as React from "react";
 import "./navbar.scss";
 
 
-const Navbar: React.FC<NavbarProp> = ({ toggleModal }) => {
+const Navbar: React.FC<NavbarProp> = ({ toggleModal, currentApp }) => {
 
    return (
       <nav className="navbar pr-4 flex w-full items-center h-10 border-b border-solid border-gray-300 justify-between">
          <div></div>
          <div className="flex">
             <span className="inline-block w-20 border-b border-opacity-25 mr-4 border-solid border-indigo-300 transform -translate-y-3"></span>
-            <h2 className="text-indigo-700 text-lg">Task Manager</h2>
+            <h2 className="text-indigo-700 text-lg">{currentApp}</h2>
             <span className="inline-block w-20 border-b border-opacity-25 ml-4 border-solid border-indigo-300 transform -translate-y-3"></span>
          </div>
          <ul className="flex">
