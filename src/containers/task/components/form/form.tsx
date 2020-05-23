@@ -1,23 +1,37 @@
 import * as React from 'react'
 
 import useForm from "~hooks/useForm";
-import { insertOne } from "~database/taskdb";
+import * as db from "~database/taskdb";
 import utils from "~utils/utils";
 import "./form.scss";
 
-const Form: React.FC<FormProp> = ({ toggleModal }) => {
+const Form: React.FC<FormProp> = ({ toggleModal, data }) => {
+   const isEditing = Boolean(data)
+   let initialValues;
 
-   const initialValues = {
-      task: "",
-      comment: "",
-      priority: 0 as Priority,
-      date: "",
-      time: "",
-      pinned: false
+   if(isEditing) { // set initial values to data if we're editing a task
+      initialValues = {
+         task: data.deet,
+         comment: data.comment,
+         priority: "" as Priority,
+         date: "",
+         time: "",
+         pinned: false
+      }
+   } else {
+      initialValues = {
+         task: "",
+         comment: "",
+         priority: "" as Priority,
+         date: "",
+         time: "",
+         pinned: false
+      }
    }
-   const persistFormData = (values: FormValues) => {
+   
+   const persistFormData = async (values: FormValues): Promise<void> => {
 
-      const data = {
+      const taskObj = {
          deet: values.task,
          comment: values.comment,
          status: "in-progress" as Status,
@@ -27,9 +41,13 @@ const Form: React.FC<FormProp> = ({ toggleModal }) => {
          pinned: false
       }
 
-      const task: Task = utils.injectID([data])[0]
+      if(isEditing) {
+         await db.updateMany(data.id, taskObj)
+         return
+      }
+      const task: Task = utils.injectID([taskObj])[0]
 
-      insertOne(task)
+      db.insertOne(task)
          .then(_ => console.log("[x] - task created"))
          .catch(err => console.error(err))
    }

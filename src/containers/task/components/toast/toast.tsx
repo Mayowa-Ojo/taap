@@ -14,7 +14,15 @@ const Toast: React.FC<ToastProp> = (props) => {
    const handleToastAction = (e) => {
       const id = e.target.closest(".card").querySelector("input[type='hidden']").value
       const action = props.dispatchToastAction(e.target.innerText)
-      action(id)
+
+      // for the purpose of handling edge cases, dispatchToast action returns
+      // either a function or an array of two items (a function and a value: string)
+      // we use type assertions to infer the correct type
+      if(Array.isArray(action)) {
+         (action as [Action, string])[0](id, action[1]) // second array element is passed as the second parameter to action()
+      } else {
+         (action as Action)(id)
+      }
       props.handleMenuOpen()
    } 
 

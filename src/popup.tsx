@@ -30,7 +30,7 @@ function App() {
       case "form":
         return <Form toggleModal={toggleModal} data={modalData}/>;
       case "view": 
-        return <View toggleModal={toggleModal} />;
+        return <View toggleModal={toggleModal} data={modalData}/>;
     }
   }
 
