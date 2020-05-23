@@ -16,9 +16,9 @@ const Task: React.FC<TaskProp> = (props) => {
       const completed = await utils.filterByStatus("completed" as Status)
       const unfulfilled = await utils.filterByStatus("unfulfilled" as Status)
 
-      cards["in-progress"] = inProgress.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} />)
-      cards["completed"] = completed.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} />)
-      cards["unfulfilled"] = unfulfilled.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} />)
+      cards["in-progress"] = inProgress.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} status={"in-progress"} />)
+      cards["completed"] = completed.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} status={"completed"} />)
+      cards["unfulfilled"] = unfulfilled.map((obj, i) => <Card key={i} task={obj} setReloading={setReloading} toggleModal={props.toggleModal} status={"unfulfilled"} />)
 
       setCards(cards)
    }
