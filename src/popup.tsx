@@ -11,7 +11,7 @@ import Navbar from "./components/navbar";
 import "./popup.css";
 
 function App() {
-  const [currentApp, setCurrentApp] = React.useState<string>("Task Manager")
+  const [currentApp, setCurrentApp] = React.useState<string>("Password Keeper")
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
   const [modalContent, setModalContent] = React.useState<string>("")
   const [modalData, setModalData] = React.useState<any>({})
