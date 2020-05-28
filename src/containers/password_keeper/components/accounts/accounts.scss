@@ -1,0 +1,21 @@
+.accounts {
+   .header {
+      height: 10%;
+   }
+   
+   .accounts-list {
+      height: 85%;
+   }
+   
+   &::-webkit-scrollbar {
+      width: 3px;
+   }
+   &::-webkit-scrollbar-thumb {
+      background-color: #6682E3;
+      border-radius: 20px;
+      // border: 2px solid #c4c4c4;
+   }
+   &::-webkit-scrollbar-track {
+      background: #c4c4c4;
+   }
+}

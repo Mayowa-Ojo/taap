@@ -1,0 +1,13 @@
+.account-row {
+   .row {
+      & :hover {
+         .flex .hidden {
+            opacity: 1;
+         }
+      }
+      p {
+         font-size: 0.6rem;
+      }
+   }
+
+}
