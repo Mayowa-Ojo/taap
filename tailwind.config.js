@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '72': '18rem'
+        '72': '18rem',
+        '80': '20rem'
       }
     }
   },
