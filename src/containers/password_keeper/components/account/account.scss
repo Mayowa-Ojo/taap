@@ -1,8 +1,8 @@
 .account-row {
    .row {
-      & :hover {
-         .flex .hidden {
-            opacity: 1;
+      &:hover {
+         svg {
+            opacity: 1 !important;
          }
       }
       p {

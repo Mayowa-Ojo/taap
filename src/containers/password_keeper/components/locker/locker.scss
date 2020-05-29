@@ -4,4 +4,16 @@
          font-size: 0.6rem;
       }
    }
+   .input-password {
+      label {
+         transform: translate(0.7rem, -1.7rem);
+      }
+
+      input:focus {
+         & + label {
+            transform: translate(0.7rem, -2.6rem);
+            color: #4299E1 !important;
+         }
+      }
+   }
 }

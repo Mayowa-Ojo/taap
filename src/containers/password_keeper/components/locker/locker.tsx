@@ -2,9 +2,14 @@ import * as React from 'react'
 
 import "./locker.scss";
 
-const Locker = () => {
+const Locker = ({ switchRoute }) => {
+
+   const handleLogin = () => {
+      switchRoute("accounts")
+   }
+
    return (
-      <div className="w-1/2 h-72 bg-white mx-4 shadow">
+      <div className="w-1/2 h-80 bg-white mx-4 shadow">
          <div className="content w-10/12 mx-auto flex flex-col content-center">
             <div className="header flex justify-center my-2">
                <svg className="self-center" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +30,16 @@ const Locker = () => {
             </div>
 
             <div className="input-password mx-auto w-48 my-2">
-               <input className="text-xs px-2 py-1 w-full outline-none border-2 border-solid border-gray-300 focus:border-indigo-300 rounded" type="password" name="key" id="key" placeholder="your secret key" />
+               <input className="text-xs px-2 py-1 w-full outline-none border-2 border-solid border-gray-300 focus:border-indigo-300 rounded" type="password" name="key" id="key" />
+               <label className="text-xs px-1 bg-white text-gray-400 inline-block transition-all duration-100" htmlFor="key">secret key</label>
             </div>
 
-            <div className="button w-20 mx-auto my-2">
-               <button className="rounded text-xs w-full h-6 bg-blue-400 hover:bg-blue-500">Login</button>
+            <div className="button w-20 mx-auto">
+               <button 
+                  onClick={handleLogin}
+                  className="rounded text-xs text-white w-full h-6 bg-blue-400 hover:bg-blue-500 focus:outline-none">
+               Login
+               </button>
             </div>
          </div>
       </div>
