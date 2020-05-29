@@ -15,13 +15,20 @@ type uuid = string
 
 declare interface Task {
    id?: uuid
-   deet: string,
+   deet: string
    comment?: string
    status: Status
    createdAt: Date
    priority: Priority
    due: Date
    pinned: boolean
+}
+
+declare interface Account {
+   account: string
+   username: string
+   password: string
+   isAdmin: boolean
 }
 
 declare interface Options {
