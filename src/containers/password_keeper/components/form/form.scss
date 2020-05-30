@@ -1,0 +1,24 @@
+form {
+   height: 13rem;
+   width: 17rem;
+   // top: -12rem;
+   .input {
+      label {
+         transform: translate(0.7rem, -1.7rem);
+      }
+
+      input:focus {
+         & + label {
+            transform: translate(0.7rem, -2.6rem);
+            color: #4299E1 !important;
+         }
+      }
+   }
+   .button {
+      padding: 0 2.5rem;
+   }
+}
+
+.open {
+   top: -13.2rem;
+}

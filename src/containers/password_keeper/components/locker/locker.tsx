@@ -1,15 +1,18 @@
 import * as React from 'react'
 
+import Form from "../form/form";
 import "./locker.scss";
 
 const Locker = ({ switchRoute }) => {
+   const [formOpen, setFormOpen] = React.useState<boolean>(false)
 
    const handleLogin = () => {
       switchRoute("accounts")
    }
 
    return (
-      <div className="w-1/2 h-80 bg-white mx-4 shadow">
+      <div className="w-1/2 h-80 bg-white mx-4 shadow overflow-hidden relative">
+         <Form formOpen={formOpen} setFormOpen={setFormOpen} />
          <div className="content w-10/12 mx-auto flex flex-col content-center">
             <div className="header flex justify-center my-2">
                <svg className="self-center" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +43,9 @@ const Locker = ({ switchRoute }) => {
                   className="rounded text-xs text-white w-full h-6 bg-blue-400 hover:bg-blue-500 focus:outline-none">
                Login
                </button>
+
             </div>
+            <p onClick={() => setFormOpen(!formOpen)} className="text-xs text-red-400 hover:text-red-500 text-center cursor-pointer mt-2">No locker? create one</p>
          </div>
       </div>
    )

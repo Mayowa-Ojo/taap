@@ -12,7 +12,7 @@ const Accounts = ({ switchRoute }) => {
    return (
       <div className="accounts w-1/2 h-80 bg-white mx-4 shadow overflow-auto">
          <div className="header flex justify-between px-4 my-2">
-         <svg onClick={handleLogout} className="h-5 w-5 mt-1 cursor-pointer stroke-current text-indigo-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+         <svg onClick={handleLogout} className="h-5 w-5 mt-1 cursor-pointer stroke-current text-indigo-500" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
          </svg>
             <h1 className="text-lg text-indigo-500">credentials</h1>
