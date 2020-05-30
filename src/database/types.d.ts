@@ -25,6 +25,7 @@ declare interface Task {
 }
 
 declare interface Account {
+   id: string
    account: string
    username: string
    password: string
